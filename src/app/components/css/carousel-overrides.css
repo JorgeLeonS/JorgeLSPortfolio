@@ -1,0 +1,38 @@
+/* General transition for all slides */
+.slick-slide {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* By default, shrink and fade slides a bit */
+  .slick-slide {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  
+  /* The center slide gets scaled up and is fully visible */
+  .slick-center {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    z-index: 1; /* optional to place it above side slides */
+  }
+
+  .slick-dots li button:before {
+    font-size: 20px;
+    padding-top: 15px;
+    color: #bbf7d0;
+  }
+  
+  /* Optional: change color for the active dot */
+  .slick-dots li.slick-active button:before {
+    color: #bbf7d0;  /* Active dot color (e.g., green) */
+  }
+
+  @media (max-width: 480px) {
+  .slick-slide {
+    transform: scale(0.9); 
+  }
+  .slick-center {
+    transform: scale(1.05);
+  }
+}
+  
