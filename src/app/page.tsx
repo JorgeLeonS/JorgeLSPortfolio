@@ -4,9 +4,9 @@ import ClientProject from './projects/[slug]/ClientProject';
 export default async function Page({
     params,
   }: {
-    params: { slug: string } | Promise<{ slug: string }>;
+    params: { slug: string };
   }) {
-    // Await params in case it’s a promise. If it's not, await still returns the value.
-    const { slug } = await params;
-    return <ClientProject slug={slug} />;
+    // Force params into a Promise to satisfy the type constraint.
+    const resolvedParams = await (params as unknown as Promise<{ slug: string }>);
+    return <ClientProject slug={resolvedParams.slug} />;
   }
