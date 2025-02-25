@@ -2,25 +2,29 @@
 import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { projectsData, ProjectsCarouselProps } from '../data/ProjectsData';
+import { projectsData, Project } from '../data/ProjectsData';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './css/carousel-overrides.css';
 
+export interface ProjectsCarouselProps {
+  setActiveProject: (project: Project) => void;
+}
+
 // Dynamically import Slider to avoid SSR issues in Next.js
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
-export default function ProjectsCarousel({ setActiveProject } : ProjectsCarouselProps) {
+export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselProps) {
   // Use a ref to store the starting coordinates
   const clickStart = useRef({ x: 0, y: 0 });
 
   // Mouse event handlers
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     clickStart.current = { x: e.clientX, y: e.clientY };
   };
 
-  const handleMouseUp = (e, project) => {
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>, project: Project) => {
     const diffX = Math.abs(e.clientX - clickStart.current.x);
     const diffY = Math.abs(e.clientY - clickStart.current.y);
     // If the movement is minimal, treat as a click
@@ -30,7 +34,7 @@ export default function ProjectsCarousel({ setActiveProject } : ProjectsCarousel
   };
 
   // Touch event handlers for mobile devices
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     if (e.touches.length > 0) {
       clickStart.current = {
         x: e.touches[0].clientX,
@@ -39,7 +43,7 @@ export default function ProjectsCarousel({ setActiveProject } : ProjectsCarousel
     }
   };
 
-  const handleTouchEnd = (e, project) => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>, project: Project) => {
     if (e.changedTouches.length > 0) {
       const diffX = Math.abs(
         e.changedTouches[0].clientX - clickStart.current.x

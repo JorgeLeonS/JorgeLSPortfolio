@@ -6,10 +6,13 @@ import ResponsiveNavBar from '../../components/ResponsiveNavBar';
 import ProjectsCarousel from '../../components/ProjectsCarousel';
 import AboutMe from '../../components/AboutMe';
 import ProjectDescription from '../../components/ProjectsDescription';
+import { Project } from '../../data/ProjectsData';
 
 export default function Home({ slug }: { slug: string }) {
-  const [activeSection, setActiveSection] = useState('projects');
-  const [activeProject, setActiveProject] = useState(null);
+  // Type activeSection as either "projects" or "about"
+  const [activeSection, setActiveSection] = useState<'projects' | 'about'>('projects');
+  // Type activeProject as Project or null
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
     <div className="bg-darkest-green text-green-200 min-h-screen">

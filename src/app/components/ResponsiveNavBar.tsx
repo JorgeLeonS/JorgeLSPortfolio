@@ -1,7 +1,13 @@
 'use client';
 import Image from 'next/image';
 
-export default function ResponsiveNavBar({ activeSection, setActiveSection }) {
+export interface ResponsiveNavBarProps {
+  activeSection: 'projects' | 'about';
+  setActiveSection: (section: 'projects' | 'about') => void;
+}
+
+
+export default function ResponsiveNavBar({ activeSection, setActiveSection } : ResponsiveNavBarProps) {
   return (
     <nav className="bg-darkest-green text-green-100">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">

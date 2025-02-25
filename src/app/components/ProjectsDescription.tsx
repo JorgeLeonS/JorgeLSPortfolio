@@ -1,9 +1,15 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { Project } from '../data/ProjectsData';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 
-export default function ProjectDescription({ project, onBack }) {
+export interface ProjectDescriptionProps {
+  project: Project;
+  onBack: () => void;
+}
+
+export default function ProjectDescription({ project, onBack }: ProjectDescriptionProps) {
   return (
     <div className="relative p-4">
       {/* Back Arrow */}
