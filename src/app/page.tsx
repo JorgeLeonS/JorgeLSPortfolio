@@ -1,4 +1,3 @@
-// app/page.tsx
 import ClientProject from './projects/[slug]/ClientProject';
 
 export default async function Page({
