@@ -1,3 +1,12 @@
+export interface Project {
+  slug: string;
+  // add other properties as needed
+}
+
+export interface ProjectsCarouselProps {
+  setActiveProject: (project: Project) => void;
+}
+
 export const projectsData = [
     {
       slug: 'first-project',

@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { projectsData } from '../data/ProjectsData';
+import { projectsData, ProjectsCarouselProps } from '../data/ProjectsData';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -11,7 +11,7 @@ import './css/carousel-overrides.css';
 // Dynamically import Slider to avoid SSR issues in Next.js
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
-export default function ProjectsCarousel({ setActiveProject }) {
+export default function ProjectsCarousel({ setActiveProject } : ProjectsCarouselProps) {
   // Use a ref to store the starting coordinates
   const clickStart = useRef({ x: 0, y: 0 });
 
