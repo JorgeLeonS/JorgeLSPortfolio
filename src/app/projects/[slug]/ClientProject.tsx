@@ -1,18 +1,60 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import ResponsiveNavBar from '../../components/ResponsiveNavBar';
 import ProjectsCarousel from '../../components/ProjectsCarousel';
 import AboutMe from '../../components/AboutMe';
-import ProjectDescription from '../../components/ProjectsDescription';
-import { Project } from '../../data/ProjectsData';
+import ProjectDescription from '../../components/ProjectDescription';
+import { Project, projectsData } from '../../data/ProjectsData';
 
 export default function Home({ slug }: { slug: string }) {
-  // Type activeSection as either "projects" or "about"
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [activeSection, setActiveSection] = useState<'projects' | 'about'>('projects');
-  // Type activeProject as Project or null
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  // Sync component state with URL query parameters
+  useEffect(() => {
+    const section = searchParams.get('section') as 'projects' | 'about' | null;
+    const projectSlug = searchParams.get('project');
+
+    // Set the section (default to projects if not provided)
+    if (section) {
+      setActiveSection(section);
+    } else {
+      setActiveSection('projects');
+    }
+
+    // If there is a project slug in the URL and we're in projects section, set the active project
+    if (section === 'projects' && projectSlug) {
+      const foundProject = projectsData.find((p) => p.slug === projectSlug);
+      setActiveProject(foundProject || null);
+    } else {
+      setActiveProject(null);
+    }
+  }, [searchParams]);
+
+  // Update the URL and state when the section changes
+  const handleSectionChange = (section: 'projects' | 'about') => {
+    setActiveSection(section);
+    setActiveProject(null); // clear active project when switching sections
+    router.push(`/?section=${section}`);
+  };
+
+  // Update the URL and state when a project is selected
+  const handleProjectSelect = (project: Project) => {
+    setActiveProject(project);
+    router.push(`/?section=projects&project=${project.slug}`);
+  };
+
+  // Update the URL and state when going back from a project description
+  const handleBack = () => {
+    setActiveProject(null);
+    router.push(`/?section=projects`);
+  };
 
   return (
     <div className="bg-darkest-green text-green-200 min-h-screen">
@@ -23,7 +65,7 @@ export default function Home({ slug }: { slug: string }) {
 
       <ResponsiveNavBar
         activeSection={activeSection}
-        setActiveSection={setActiveSection}
+        setActiveSection={handleSectionChange}
       />
 
       <main className="mx-auto p-6">
@@ -36,7 +78,7 @@ export default function Home({ slug }: { slug: string }) {
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.5 }}
             >
-              <ProjectsCarousel setActiveProject={setActiveProject} />
+              <ProjectsCarousel setActiveProject={handleProjectSelect} />
             </motion.section>
           )}
 
@@ -50,7 +92,7 @@ export default function Home({ slug }: { slug: string }) {
             >
               <ProjectDescription
                 project={activeProject}
-                onBack={() => setActiveProject(null)}
+                onBack={handleBack}
               />
             </motion.section>
           )}

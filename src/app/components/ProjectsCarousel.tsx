@@ -12,11 +12,9 @@ export interface ProjectsCarouselProps {
   setActiveProject: (project: Project) => void;
 }
 
-// Dynamically import Slider to avoid SSR issues in Next.js
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
 export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselProps) {
-  // Use a ref to store the starting coordinates
   const clickStart = useRef({ x: 0, y: 0 });
 
   // Mouse event handlers
@@ -27,7 +25,6 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
   const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>, project: Project) => {
     const diffX = Math.abs(e.clientX - clickStart.current.x);
     const diffY = Math.abs(e.clientY - clickStart.current.y);
-    // If the movement is minimal, treat as a click
     if (diffX < 5 && diffY < 5) {
       setActiveProject(project);
     }
@@ -45,12 +42,8 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>, project: Project) => {
     if (e.changedTouches.length > 0) {
-      const diffX = Math.abs(
-        e.changedTouches[0].clientX - clickStart.current.x
-      );
-      const diffY = Math.abs(
-        e.changedTouches[0].clientY - clickStart.current.y
-      );
+      const diffX = Math.abs(e.changedTouches[0].clientX - clickStart.current.x);
+      const diffY = Math.abs(e.changedTouches[0].clientY - clickStart.current.y);
       if (diffX < 5 && diffY < 5) {
         setActiveProject(project);
       }
