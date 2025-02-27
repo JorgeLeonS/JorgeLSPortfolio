@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -9,7 +9,8 @@ import AboutMe from '../../components/AboutMe';
 import ProjectDescription from '../../components/ProjectDescription';
 import { Project, projectsData } from '../../data/ProjectsData';
 
-export default function Home({ slug }: { slug: string }) {
+// Extract the logic that uses useSearchParams into its own component.
+function HomeContent({ slug }: { slug: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -111,5 +112,14 @@ export default function Home({ slug }: { slug: string }) {
         </AnimatePresence>
       </main>
     </div>
+  );
+}
+
+// Wrap HomeContent in a Suspense boundary to satisfy useSearchParams
+export default function Home({ slug }: { slug: string }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent slug={slug} />
+    </Suspense>
   );
 }
