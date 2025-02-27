@@ -10,7 +10,7 @@ export const projectsData = [
   {
     slug: 'shadow-chambers',
     title: 'Shadow Chambers',
-    image: '/images/my-first-project.gif',
+    image: '/images/ShadowChambers/ShadowChambersLanding.png',
     description: 'Brief description of the first project.',
   },
   {
@@ -44,6 +44,20 @@ export const projectsData = [
       description: 'Brief description of the third project.',
     },
   ];
+
+  export const shadowChambersImages = {
+    landing: "/images/ShadowChambers/LandingImage.png",
+    logo: "/images/ShadowChambers/ShadowChambersLogoWhite.png",
+    audio: "/images/placeholder.png",
+    pico: "/images/placeholder.png",
+    enemies: "/images/placeholder.png",
+    gifs: [
+      "/images/Gifs/CA_Robots2.gif",
+      "/images/Gifs/CA_Robots1.gif",
+      "/images/Gifs/CA_Puzzle1.gif",
+      "/images/Gifs/CA_Puzzle2.gif",
+    ]
+  };
 
   export const swarm2Images = {
     landing: "/images/Swarm2/LandingImage.png",
