@@ -16,25 +16,25 @@ export const projectsData = [
   {
     slug: 'chronostrike',
     title: 'Chronostrike',
-    image: '/images/my-first-project.gif',
+    image: '/images/Chronostrike/ChronostrikeLanding.png',
     description: 'Brief description of the first project.',
   },
     {
       slug: 'swarm-2',
       title: 'Swarm 2',
-      image: '/images/my-first-project.gif',
+      image: '/images/Swarm2/LandingImage.png',
       description: 'Brief description of the first project.',
     },
     {
       slug: 'visions-of-yesterday',
       title: 'Visions of Yesterday',
-      image: '/images/Dementia/Gifs/SquaredDementia.gif',
+      image: '/images/Dementia/VisionsOfyesterdayLanding.png',
       description: 'Brief description of the second project.',
     },
     {
       slug: 'cyber-attack',
       title: 'Cyber Attack',
-      image: '/images/CyberAttack/SquaredCA.gif',
+      image: '/images/CyberAttack/CyberAttackLanding.png',
       description: 'Brief description of the second project.',
     },
     {
@@ -43,11 +43,29 @@ export const projectsData = [
       image: '/images/my-third-project.jpg',
       description: 'Brief description of the third project.',
     },
-    // ... Add more as needed
   ];
 
   export const swarm2Images = {
+    landing: "/images/Swarm2/LandingImage.png",
     logo: "/images/Swarm2/Swarm2Logo.png",
+    audio: "/images/placeholder.png",
+    pico: "/images/placeholder.png",
+    enemies: "/images/placeholder.png",
+    gifs: [
+      "/images/Gifs/CA_Robots2.gif",
+      "/images/Gifs/CA_Robots1.gif",
+      "/images/Gifs/CA_Puzzle1.gif",
+      "/images/Gifs/CA_Puzzle2.gif",
+    ]
+  };
+
+  export const chronostrikeImages = {
+    landing: "/images/Chronostrike/ChronostrikeLogo.png",
+    logo: "/images/Chronostrike/ChronostrikeLogo.png",
+    overview: "/images/placeholder.png",
+    audio: "/images/placeholder.png",
+    multiplayer: "/images/placeholder.png",
+    weapons: "/images/placeholder.png",
     gifs: [
       "/images/Gifs/CA_Robots2.gif",
       "/images/Gifs/CA_Robots1.gif",

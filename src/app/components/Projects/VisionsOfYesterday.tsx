@@ -188,7 +188,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
             Team members: 
             <a href="" className="text-blue-400 hover:underline ml-1">Anthony Fusio</a>,
             <a href="" className="text-blue-400 hover:underline ml-1"> Elaine Serrano</a>,
-            <a href="" className="text-blue-400 hover:underline ml-1"> William Livingstone</a>,
+            <a href="" className="text-blue-400 hover:underline ml-1"> William Livingston</a>,
           </p>
         </section>
       </div>

@@ -2,14 +2,14 @@
 import React from 'react';
 import { otherProjectImages, swarm2Images, Project } from '../../data/ProjectsData';
 import { BaseProjectDescription } from '../BaseProjectDescription';
-import { FaSteam, FaMeta } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaSteam, FaMeta } from "react-icons/fa6";
 
-export interface Swarm2Props {
+export interface ShadowChambersProps {
   project: Project;
   onBack: () => void;
 }
 
-export function Swarm2({ project, onBack }: Swarm2Props) {
+export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
   return (
     <BaseProjectDescription project={project} onBack={onBack}>
       {/* Header Section */}
@@ -61,22 +61,35 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
 
       {/* Main Content Section */}
       <div className="max-w-6xl mx-auto flex flex-col gap-y-12 text-gray-300">
-        
-        {/* Overview (No image here, so simple container) */}
-        <div className="items-center gap-6">
-          <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p>
-            During my time on this project, I worked very closely with the game director, 
-            game designers, artists, and other developers to accomplish a broad range of tasks, 
-            including feature development, tool creation, technical art implementation, and overall 
-            polish and performance work.
-          </p>
+
+        {/* Overview */}
+        <div className="flex flex-col md:flex-row md:items-center gap-6">
+          {/* Replace with your preferred image for the overview */}
+          <img
+            src={swarm2Images.overview /* or otherProjectImages.someImage */}
+            alt="Development Overview"
+            className="md:w-1/2 object-cover rounded-lg"
+          />
+          <div className="md:w-1/2">
+            <h2 className="text-2xl font-bold mb-4">Overview</h2>
+            <p>
+              During my time on this project, I worked very closely with the game director, 
+              game designers, artists, and other developers to accomplish a broad range of tasks, 
+              including feature development, tool creation, technical art implementation, and overall 
+              polish and performance work.
+            </p>
+          </div>
         </div>
 
         {/* Audio Programming */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          {/* Text first by default on mobile, second on desktop */}
-          <div className="md:w-1/2 order-1 md:order-2">
+          {/* Replace with an image that represents Audio Programming */}
+          <img
+            src={swarm2Images.audio /* or otherProjectImages.someAudioImage */}
+            alt="Audio Programming"
+            className="md:w-1/2 object-cover rounded-lg"
+          />
+          <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-4">Audio Programming</h2>
             <p>
               I collaborated with various audio designers, ranging from small studios to independent artists, 
@@ -88,17 +101,17 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               Wwise profiling and further refined my audio implementation skills.
             </p>
           </div>
-          {/* Image second by default on mobile, first on desktop */}
-          <img
-            src={swarm2Images.audio /* or otherProjectImages.someAudioImage */}
-            alt="Audio Programming"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
 
         {/* Pico Headset Functionality */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          <div className="md:w-1/2 order-1 md:order-2">
+          {/* Replace with an image that represents VR or Pico */}
+          <img
+            src={swarm2Images.pico /* or otherProjectImages.somePicoImage */}
+            alt="Pico Headset Functionality"
+            className="md:w-1/2 object-cover rounded-lg"
+          />
+          <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-4">Pico Headset Functionality</h2>
             <p>
               Although I didn’t implement the initial support for multiple VR headsets, I became well-versed 
@@ -107,16 +120,17 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               and frame rate issues stemming from supporting both headsets.
             </p>
           </div>
-          <img
-            src={swarm2Images.pico /* or otherProjectImages.somePicoImage */}
-            alt="Pico Headset Functionality"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
 
         {/* Other Highlights */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          <div className="md:w-1/2 order-1 md:order-2">
+          {/* Replace with an image that represents these additional features */}
+          <img
+            src={swarm2Images.enemies /* or otherProjectImages.someEnemiesImage */}
+            alt="Other Highlights"
+            className="md:w-1/2 object-cover rounded-lg"
+          />
+          <div className="md:w-1/2">
             <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
             <ul className="list-disc ml-5 space-y-2">
               <li>
@@ -134,11 +148,6 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               </li>
             </ul>
           </div>
-          <img
-            src={swarm2Images.enemies /* or otherProjectImages.someEnemiesImage */}
-            alt="Other Highlights"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
 
       </div>

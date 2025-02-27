@@ -84,14 +84,14 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
             className="px-2 cursor-pointer"
           >
             <div className="bg-tag-green text-green-100 rounded-lg shadow-lg overflow-hidden p-4">
-              <div className="relative aspect-[3/4] md:aspect-video rounded-md mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="relative aspect-[6/5] md:aspect-video rounded-md mb-4">
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-contain"
+  />
+</div>
               <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
               <p className="text-green-300">{project.description}</p>
             </div>
