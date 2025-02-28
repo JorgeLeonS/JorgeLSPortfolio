@@ -2,7 +2,7 @@
 import React from 'react';
 import { otherProjectImages, swarm2Images, Project } from '../../data/ProjectsData';
 import { BaseProjectDescription } from '../BaseProjectDescription';
-import { FaSteam, FaMeta } from "react-icons/fa6";
+import { FaSteam, FaMeta, FaUnity } from "react-icons/fa6";
 
 export interface Swarm2Props {
   project: Project;
@@ -16,13 +16,13 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
       <div className="max-w-6xl mx-auto flex flex-col items-center pb-8">
         <img
           src={swarm2Images.logo}
-          alt="Cyber Attack Logo"
+          alt="Swarm 2 Logo"
           className="h-auto"
         />
         <div className="flex p-3 gap-x-5">
           <a
             href="https://store.steampowered.com/app/2929260/SWARM_2/"
-            className="text-gray-400 hover:text-white size-11"
+            className="text-gray-400 size-11"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -30,7 +30,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
           </a>
           <a
             href="https://www.meta.com/experiences/swarm-2/5791805387504648/?srsltid=AfmBOopICJVTpQmE_rwv3tZhW4dd0IxFxgudZkDjAfFrURTy8ZIphu4x"
-            className="text-gray-400 hover:text-white size-11"
+            className="text-gray-400 size-11"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,7 +38,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
           </a>
           <a
             href="https://store-global.picoxr.com/en/detail/1/7283529719864344581"
-            className="text-gray-400 hover:text-white size-11"
+            className="text-gray-400 size-11"
             target="_blank"
             rel="noopener noreferrer"
           >

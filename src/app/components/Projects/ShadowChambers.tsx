@@ -38,7 +38,7 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
                 src="https://scontent.oculuscdn.com/v/t64.7195-25/473391890_4158925231005741_7697656160575343636_n.mp4?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=b20b63&amp;_nc_ohc=BQgqnhvqBzgQ7kNvgFua_QD&amp;_nc_oc=AdhWfgyZmG1twxxYGggnGEH0noPTBVObzKCidUb3o8m_C6dNLvoFHvUdkvEa0fUtotM&amp;_nc_zt=28&amp;_nc_ht=scontent.oculuscdn.com&amp;_nc_gid=AOLaDHH4widGdk7xpJ1Exsu&amp;oh=00_AYA0yD-t8iLTFYCME57CJeCWbF_l1tzH6L4Z4IaY2YwYVg&amp;oe=67C68842"
                 title="YouTube video player"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>

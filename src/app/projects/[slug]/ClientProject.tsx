@@ -7,7 +7,7 @@ import ResponsiveNavBar from '../../components/ResponsiveNavBar';
 import ProjectsCarousel from '../../components/ProjectsCarousel';
 import AboutMe from '../../components/AboutMe';
 import ProjectDescription from '../../components/ProjectDescription';
-import { Project, projectsData } from '../../data/ProjectsData';
+import { Project, projectsData, backgroundImage } from '../../data/ProjectsData';
 
 // Extract the logic that uses useSearchParams into its own component.
 function HomeContent({ slug }: { slug: string }) {
@@ -58,7 +58,14 @@ function HomeContent({ slug }: { slug: string }) {
   };
 
   return (
-    <div className="bg-darkest-green text-green-200 min-h-screen">
+    <div
+      className="bg-darkest-green text-green-200 min-h-screen"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: 'repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <Head>
         <title>Jorge LS Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
