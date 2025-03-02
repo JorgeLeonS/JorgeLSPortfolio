@@ -76,7 +76,7 @@ function HomeContent({ slug }: { slug: string }) {
         setActiveSection={handleSectionChange}
       />
 
-      <main className="mx-auto p-6">
+      <main className="mx-auto px-8">
         <AnimatePresence mode="wait">
           {activeSection === 'projects' && !activeProject && (
             <motion.section

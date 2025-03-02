@@ -72,7 +72,7 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
   };
 
   return (
-    <div className="relative w-full mx-auto py-8">
+    <div className="relative lg:w-4/5 sm:w-full mx-auto py-8">
       <Slider {...settings}>
         {projectsData.map((project) => (
           <div
@@ -89,7 +89,7 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
     src={project.image}
     alt={project.title}
     fill
-    className="object-contain"
+    className="object-contain h-full"
   />
 </div>
               <h3 className="text-2xl font-bold mb-2">{project.title}</h3>

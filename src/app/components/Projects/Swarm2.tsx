@@ -1,15 +1,53 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { otherProjectImages, swarm2Images, Project } from '../../data/ProjectsData';
 import { BaseProjectDescription } from '../BaseProjectDescription';
 import { FaSteam, FaMeta, FaUnity } from "react-icons/fa6";
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../css/carousel-overrides.css';
 
 export interface Swarm2Props {
   project: Project;
   onBack: () => void;
 }
 
+const Slider = dynamic(() => import('react-slick'), { ssr: false });
+
 export function Swarm2({ project, onBack }: Swarm2Props) {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Carousel data: image and corresponding description
+  const carouselData = [
+    {
+      image: swarm2Images.enemies, // You can swap this out with the appropriate image
+      description: "Employed mathematical concepts to implement various enemy behaviors, such as turrets that track the player’s position while rotating along two different axes (base and barrel)."
+    },
+    {
+      image: swarm2Images.enemies, // Replace with your actual image reference
+      description: "Developed a teleporting enemy that, upon being hit, relocates to a newly calculated position at a safe distance from the player and within level boundaries."
+    },
+    {
+      image: swarm2Images.enemies, // Another image reference
+      description: "Created a customizable laser system with variable movement and gameplay settings, prominently featured in the final level of the rogue-like mode."
+    }
+  ];
+
+  // Settings for react-slick slider
+  const sliderSettings = {
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: (index: number) => setCurrentSlide(index),
+  };
+
   return (
     <BaseProjectDescription project={project} onBack={onBack}>
       {/* Header Section */}
@@ -63,6 +101,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
       <div className="max-w-6xl mx-auto flex flex-col gap-y-12 text-gray-300">
         
         {/* Overview (No image here, so simple container) */}
+        <section className="max-w-6xl mx-auto border-b border-green-500 pb-8 space-y-6">
         <div className="items-center gap-6">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
           <p className="md:text-lg">
@@ -72,6 +111,8 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
             polish and performance work.
           </p>
         </div>
+        </section>
+
 
         {/* Audio Programming */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
@@ -114,32 +155,36 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
           />
         </div>
 
-        {/* Other Highlights */}
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
+        {/* Other Highlights Section with Carousel */}
+        <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
+          {/* Description Panel */}
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
-            <ul className="list-disc ml-5 space-y-2 md:text-lg">
-              <li>
-                Employed mathematical concepts to implement various enemy behaviors, 
-                such as turrets that track the player’s position while rotating along two 
-                different axes (base and barrel).
-              </li>
-              <li>
-                Developed a teleporting enemy that, upon being hit, relocates to a newly calculated 
-                position at a safe distance from the player and within level boundaries.
-              </li>
-              <li>
-                Created a customizable laser system with variable movement and gameplay settings, 
-                prominently featured in the final level of the rogue-like mode.
-              </li>
-            </ul>
+            <p className="md:text-lg">
+              {carouselData[currentSlide].description}
+            </p>
           </div>
-          <img
-            src={swarm2Images.enemies /* or otherProjectImages.someEnemiesImage */}
-            alt="Other Highlights"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
+          {/* Carousel Panel */}
+          <div className="md:w-1/2 order-2 md:order-1">
+            <Slider {...sliderSettings}>
+              {carouselData.map((slide, index) => (
+                <div 
+                key={index}
+                className="px-2 cursor-pointer">
+                  <div className="relative aspect-[6/5] mb-4">
+                  <Image
+                    src={slide.image}
+                    alt={`Slide ${index + 1}`}
+                    fill
+                    className="object-contain rounded-lg"
+                  />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
+
 
       </div>
     </BaseProjectDescription>
