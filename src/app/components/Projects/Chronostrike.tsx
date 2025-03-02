@@ -47,32 +47,28 @@ export function Chronostrike({ project, onBack }: ChronostrikeProps) {
       <div className="max-w-6xl mx-auto flex flex-col gap-y-12 text-gray-300">
 
         {/* Intro / Overview */}
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
+        <section className="max-w-6xl mx-auto border-b border-green-500 pb-8 space-y-6">
+        <div className="flex items-center">
           {/* Text first on mobile, second on desktop */}
-          <div className="md:w-1/2 order-1 md:order-2">
+          <div className="">
             <h2 className="text-2xl font-bold mb-4">Overview</h2>
             <p>
               This was the first multiplayer game I worked on professionally, so my experience
               in that area was initially limited. However, I still managed to learn the fundamentals
               and implement various features. Since I had previously worked on audio for Swarm 2, 
-              this time I created an audio manager from scratch that routed all Wwise events into 
-              a centralized system, later adapting it for multiplayer through Fusion. I also removed
-              placeholder sounds to help with memory usage.
+              I also did a lot of audio programming for this project.
             </p>
           </div>
-          {/* Image second on mobile, first on desktop */}
-          <img
-            src={chronostrikeImages.overview}
-            alt="Overview"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
+        </section>
 
         {/* Audio & Wwise Integration */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Audio & Wwise Integration</h2>
             <p>
+              Led audio programming by developing a centralized audio manager to route Wwise events, ensuring a streamlined audio pipeline for the game’s timeline-based development and multiplayer functionality. 
+              This system managers sound effects and voice-over priority, as well as a queueing sytem. 
               I closely collaborated with our audio designer to implement his desired 
               behaviors. One interesting task was configuring a laser’s audio source so that its
               position would dynamically track the closest point on the beam relative to the player.
@@ -100,7 +96,7 @@ export function Chronostrike({ project, onBack }: ChronostrikeProps) {
             </p>
           </div>
           <img
-            src={chronostrikeImages.multiplayer}
+            src={chronostrikeImages.spideySense}
             alt="Multiplayer and Vivox Integration"
             className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
           />
@@ -109,16 +105,15 @@ export function Chronostrike({ project, onBack }: ChronostrikeProps) {
         {/* Weapon Models */}
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="md:w-1/2 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-4">Weapon Models Update</h2>
+            <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
             <p>
-              Finally, I updated all the 3D weapon models, ensuring that their functionality, hand 
-              positions, SFX, and VFX remained consistent and bug-free. This process involved 
-              cross-checking every detail so that players would have a seamless experience 
-              interacting with the game’s arsenal.
+            Developed editor-only functionality, including a Gizmos preview for enemy attacks based on the game's timeline. 
+            I also implemented enemy behaviors, such as an aiming turret, and collaborated with artists to integrate their work—from VFX to updating all 3D weapon models. 
+            Ensured weapon functionality, hand positions, SFX, and VFX remained consistent and bug-free.
             </p>
           </div>
           <img
-            src={chronostrikeImages.weapons}
+            src={chronostrikeImages.otherHighlights}
             alt="Weapon Models"
             className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
           />

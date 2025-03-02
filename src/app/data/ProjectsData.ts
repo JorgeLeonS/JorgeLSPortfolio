@@ -50,9 +50,9 @@ export const projectsData = [
   export const shadowChambersImages = {
     landing: "/images/ShadowChambers/LandingImage.png",
     logo: "/images/ShadowChambers/ShadowChambersLogoWhite.png",
-    audio: "/images/placeholder.png",
-    pico: "/images/placeholder.png",
-    enemies: "/images/placeholder.png",
+    screenshot1: "/images/placeholder.png",
+    screenshot2: "/images/placeholder.png",
+    screenshot3: "/images/placeholder.png",
     gifs: [
       "/images/Gifs/CA_Robots2.gif",
       "/images/Gifs/CA_Robots1.gif",
@@ -79,9 +79,9 @@ export const projectsData = [
     landing: "/images/Chronostrike/ChronostrikeLogo.png",
     logo: "/images/Chronostrike/ChronostrikeLogo.png",
     overview: "/images/placeholder.png",
-    audio: "/images/placeholder.png",
-    multiplayer: "/images/placeholder.png",
-    weapons: "/images/placeholder.png",
+    audio: "/images/Chronostrike/LaserAudioTracker.gif",
+    spideySense: "/images/Chronostrike/SpideySense.gif",
+    otherHighlights: "/images/Chronostrike/OtherHighlights.gif",
     gifs: [
       "/images/Gifs/CA_Robots2.gif",
       "/images/Gifs/CA_Robots1.gif",

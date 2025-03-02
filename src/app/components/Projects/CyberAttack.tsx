@@ -44,7 +44,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
           <div className="mt-8 space-y-6">
             <div>
               <h2 className="text-2xl font-semibold mb-2">What is it?</h2>
-              <p className="text-lg">
+              <p className="md:text-lg">
                 Having a futuristic-space theme, the ship AI has gone crazy and ejected the astronauts out of the ship D:
                 The players first start on a turn based board game, where they control the remaining good robots and have to cooperate to collect enough data so they can recover control of the ship.
                 It's a fast paced, strategy game where most of the actions to perform are randomized, from the movement, attack, energy points, to a special option that can spawn more enemies, give more time for turns, or maybe teleport the player to the other section of the game, the MAZE.
@@ -52,7 +52,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">How did we do it?</h2>
-              <p className="text-lg">
+              <p className="md:text-lg">
                 The team started with 4 people (me included), who did all the development; later, some people from the same school joined and helped with design, story, and SFX.
                 <br />
                 It's an Unreal Engine 5 (Blueprint only) VR network game for up to four players.
@@ -60,7 +60,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             <div>
               <h2 className="text-2xl font-semibold mb-2">What did I do?</h2>
-              <p className="text-lg">
+              <p className="md:text-lg">
                 When a player gets teleported to the MAZE, it changes the whole game mechanic from a board game to a first-person shooter. In that mode, you will find two different challenges: fast, self-destructing, chasing robots and terminals that contain two different puzzles.
                 The objective is to find two specific terminals that will allow the player to go back to the board game. However, while the player is trapped, shooting at robots while figuring out where the terminals are on the labyrinth is the most fun part for me.
               </p>
@@ -182,7 +182,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
         {/* Credits Section */}
         <section className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold mb-2">Credits</h2>
-          <p className="text-lg">
+          <p className="md:text-lg">
             Final project for the VR and AR Design and Development course at Vancouver Film School.
             Team members: 
             <a href="" className="text-blue-400 hover:underline ml-1">Dmitrii Orlov</a>,

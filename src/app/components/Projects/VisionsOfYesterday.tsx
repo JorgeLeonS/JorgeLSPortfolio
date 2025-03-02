@@ -45,7 +45,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
           <h2 className="text-2xl font-semibold mb-4">What is it?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
-              <p className="text-lg">
+              <p className="md:md:text-lg">
                 A story based experience, developed in Unity, where the user will see visual impairments that try to imitate dementia symptoms.
                 Its original use case was to create empathy in professional and at-home carers so they can better understand the daily struggles of someone with dementia.
                 <br />
@@ -67,7 +67,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
           <h2 className="text-2xl font-semibold mb-4">How did we do it?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
-              <p className="text-lg">
+              <p className="md:md:text-lg">
                 In a team of four, we were tasked with ideating and developing “A VR experience that puts dementia care workers in the shoes of someone with dementia.”
                 The team chose a story-based approach, placing the user in the role of a person with dementia receiving regular assistance with daily tasks.
                 The limited interactions and intentionally frustrating visual impairments were designed to generate empathy.
@@ -86,7 +86,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
         {/* What did I do? Section */}
         <section className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">What did I do?</h2>
-          <div className="space-y-6 text-lg">
+          <div className="space-y-6 md:text-lg">
             <p>
               Due to the limited time (4 months) to plan, develop, adjust to the client’s feedback, and handle other projects and homework, I knew from the start that someone had to take main responsibility.
               I suggested being the lead programmer and project manager, and the team agreed.
@@ -103,7 +103,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mt-4">
               <div className="order-2 md:order-1">
-                <p className="text-lg pt-10">
+                <p className="md:text-lg pt-10">
                   Once the basic functionality was set, I focused on creating a template scene that allowed non-technical team members to easily add dialogues or actions.
                   In the image slideshow, Img 1 shows the Interactions Manager in Unity Editor, which sequences dialogues and actions.
                   Img 2 displays the PlayerController, primarily used for handling dialogues.
@@ -139,7 +139,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
                 </Slider>
               </div>
             </div>
-            <h4 className="text-lg font-semibold mt-4">What I could have improved:</h4>
+            <h4 className="md:text-lg font-semibold mt-4">What I could have improved:</h4>
             <ul className="list-disc ml-5 space-y-2">
               <li>
                 With more time, I would have created a custom editor to manage action inputs dynamically, making it easier to track method calls.
@@ -148,7 +148,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
                 I also believe that interactions such as item grabbing, light control, or visual effects could have been managed within the engine for easier adjustments.
               </li>
             </ul>
-            <h4 className="text-lg font-semibold mt-4">If you want to know a little more about how everything works...</h4>
+            <h4 className="md:text-lg font-semibold mt-4">If you want to know a little more about how everything works...</h4>
             <p>
               I implemented a coroutine-based, event-driven communication system between an interactions manager script, characters, the player, and scene actions.
               The manager iterates through an inspector-defined list and triggers the respective events for each subscribed class.
@@ -183,7 +183,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
         {/* Credits Section */}
         <section className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold mb-2">Credits</h2>
-          <p className="text-lg">
+          <p className="md:md:text-lg">
             Client project for the VR and AR Design and Development course at Vancouver Film School.
             Team members: 
             <a href="" className="text-blue-400 hover:underline ml-1">Anthony Fusio</a>,

@@ -65,7 +65,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
         {/* Overview (No image here, so simple container) */}
         <div className="items-center gap-6">
           <h2 className="text-2xl font-bold mb-4">Overview</h2>
-          <p>
+          <p className="md:text-lg">
             During my time on this project, I worked very closely with the game director, 
             game designers, artists, and other developers to accomplish a broad range of tasks, 
             including feature development, tool creation, technical art implementation, and overall 
@@ -78,7 +78,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
           {/* Text first by default on mobile, second on desktop */}
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Audio Programming</h2>
-            <p>
+            <p className="md:text-lg">
               I collaborated with various audio designers, ranging from small studios to independent artists, 
               to create a centralized audio manager and integrate new Wwise-based sounds. These ranged from 
               single event calls to more robust systems controlling different character voice-overs in multiple scenarios. 
@@ -100,7 +100,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Pico Headset Functionality</h2>
-            <p>
+            <p className="md:text-lg">
               Although I didn’t implement the initial support for multiple VR headsets, I became well-versed 
               in the Meta Quest and Pico SDKs, their update changelogs, and the relevant APIs. This knowledge 
               ensured our desired game features were correctly implemented and helped me address graphics 
@@ -118,7 +118,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
         <div className="flex flex-col md:flex-row md:items-center gap-6">
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
-            <ul className="list-disc ml-5 space-y-2">
+            <ul className="list-disc ml-5 space-y-2 md:text-lg">
               <li>
                 Employed mathematical concepts to implement various enemy behaviors, 
                 such as turrets that track the player’s position while rotating along two 
