@@ -21,7 +21,7 @@ export function BaseProjectDescription({ project, onBack, children }: BaseProjec
         <ArrowLeftIcon className="h-8 w-8" />
       </button>
 
-      <div className="mt-12">
+      <div className="mt-12 mb-12">
 
         {children}
       </div>

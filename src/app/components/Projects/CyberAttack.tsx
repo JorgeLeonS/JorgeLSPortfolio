@@ -13,7 +13,7 @@ export interface CyberAttackProps {
 export function CyberAttack({ project, onBack }: CyberAttackProps) {
   return (
     <BaseProjectDescription project={project} onBack={onBack}>
-      <div className="min-h-screen text-gray-200 p-6 space-y-16">
+      <div className="min-h-screen text-gray-200 space-y-16">
         {/* Title & Video Section */}
         <section className="max-w-6xl mx-auto">
         <div className="max-w-6xl mx-auto flex flex-col items-center pb-8">
@@ -41,7 +41,8 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
       allowFullScreen
     ></iframe>
   </div>
-          <div className="mt-8 space-y-6">
+  </section>
+          <div className="max-w-6xl mx-auto flex flex-col gap-y-12 text-gray-300">
             <div>
               <h2 className="text-2xl font-semibold mb-2">What is it?</h2>
               <p className="md:text-lg">
@@ -66,7 +67,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
               </p>
             </div>
           </div>
-        </section>
+        
 
         {/* Robots Section */}
         <section className="max-w-6xl mx-auto border-b border-green-500 pb-8">
@@ -85,7 +86,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             {/* Text on right for desktop */}
             <div className="order-1 md:order-2">
-              <ul className="list-disc ml-5 space-y-2 text-lg">
+              <ul className="list-disc ml-5 space-y-2 md:text-lg">
                 <li>Randomly patrol on the MAZE until a player enters their field of view or shoots at them.</li>
                 <li>Chase the player around the map using AI movement.</li>
                 <li>
@@ -111,7 +112,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             {/* Text on right for desktop */}
             <div className="order-1 md:order-2">
-              <ul className="list-disc ml-5 space-y-2 text-lg">
+              <ul className="list-disc ml-5 space-y-2 md:text-lg">
                 <li>Spatialized sound implementation for all the robot actions:</li>
                 <ul className="list-disc ml-5 space-y-1">
                   <li>Matching footstep sound with walking and running through animation events.</li>
@@ -147,7 +148,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             {/* Text on right for desktop */}
             <div className="order-1 md:order-2">
-              <ul className="list-disc ml-5 space-y-2 text-lg">
+              <ul className="list-disc ml-5 space-y-2 md:text-lg">
                 <li>
                   A memory puzzle. The player can grab and move shapes to check their positions. Once a shape is selected, the rest will change to the same shape.
                   The goal is to find the matching pieces and select them one after the other. When all pairs are found, the puzzle is completed.
@@ -169,7 +170,7 @@ export function CyberAttack({ project, onBack }: CyberAttackProps) {
             </div>
             {/* Text on right for desktop */}
             <div className="order-1 md:order-2">
-              <ul className="list-disc ml-5 space-y-2 text-lg">
+              <ul className="list-disc ml-5 space-y-2 md:text-lg">
                 <li>
                   An alignment puzzle. The player needs to grab the moving sphere and align the connection lasers to the scattered contact points.
                   The goal is to align all the cables simultaneously. Although it sounds simple, the Niagara effects implementation and very bright post-processing lights make it quite challenging.

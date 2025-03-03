@@ -24,15 +24,15 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
   // Carousel data: image and corresponding description
   const carouselData = [
     {
-      image: swarm2Images.enemies, // You can swap this out with the appropriate image
+      image: swarm2Images.turrets, // You can swap this out with the appropriate image
       description: "Employed mathematical concepts to implement various enemy behaviors, such as turrets that track the player’s position while rotating along two different axes (base and barrel)."
     },
     {
-      image: swarm2Images.enemies, // Replace with your actual image reference
+      image: swarm2Images.tpZoids, // Replace with your actual image reference
       description: "Developed a teleporting enemy that, upon being hit, relocates to a newly calculated position at a safe distance from the player and within level boundaries."
     },
     {
-      image: swarm2Images.enemies, // Another image reference
+      image: swarm2Images.laserSystem, // Another image reference
       description: "Created a customizable laser system with variable movement and gameplay settings, prominently featured in the final level of the rogue-like mode."
     }
   ];
@@ -129,16 +129,12 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               Wwise profiling and further refined my audio implementation skills.
             </p>
           </div>
-          <video 
-    autoPlay 
-    loop 
-    muted 
-    playsInline 
-    className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg">
-    <source src={swarm2Images.pico} type="video/mp4" />
-    <source src={swarm2Images.pico.replace('.mp4', '.webm')} type="video/webm" />
-  </video>
           {/* Image second by default on mobile, first on desktop */}
+          <img
+            src={swarm2Images.audio /* or otherProjectImages.someAudioImage */}
+            alt="Audio Programming"
+            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
+          />
         </div>
 
         {/* Pico Headset Functionality */}
@@ -176,16 +172,12 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
                 key={index}
                 className="px-2 cursor-pointer">
                   <div className="relative aspect-[6/5] mb-4">
-                  <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
-              className="object-contain rounded-lg w-full h-full">
-              <source src={slide.image} type="video/mp4" />
-              <source src={slide.image.replace('.mp4', '.webm')} type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+                  <Image
+                    src={slide.image}
+                    alt={'Slide ${index + 1}'}
+                    fill
+                    className="object-contain rounded-lg"
+                  />
                   </div>
                 </div>
               ))}

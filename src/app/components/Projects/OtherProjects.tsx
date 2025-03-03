@@ -13,7 +13,7 @@ export interface OtherProjectsProps {
 export function OtherProjects({ project, onBack }: OtherProjectsProps) {
   return (
     <BaseProjectDescription project={project} onBack={onBack}>
-    <div className="min-h-screen text-gray-200 p-6 space-y-16">
+    <div className="min-h-screen text-gray-200 space-y-16">
       {/* =============== GEOMETRY GUARS =============== */}
       <section className="max-w-6xl mx-auto border-b border-green-500 pb-8">
         <h2 className="text-3xl font-bold mb-4 flex items-center space-x-3">

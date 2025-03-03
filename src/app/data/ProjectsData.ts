@@ -53,20 +53,16 @@ export const projectsData = [
     screenshot1: "/images/placeholder.png",
     screenshot2: "/images/placeholder.png",
     screenshot3: "/images/placeholder.png",
-    gifs: [
-      "/images/Gifs/CA_Robots2.gif",
-      "/images/Gifs/CA_Robots1.gif",
-      "/images/Gifs/CA_Puzzle1.gif",
-      "/images/Gifs/CA_Puzzle2.gif",
-    ]
   };
 
   export const swarm2Images = {
     landing: "/images/Swarm2/LandingImage.png",
     logo: "/images/Swarm2/Swarm2Logo.png",
-    audio: "/images/Swarm2/placeholder.png",
-    pico: "/images/Swarm2/AimingTurrets.mp4",
-    enemies: "/images/Swarm2/AimingTurrets.mp4",
+    audio: "/images/Swarm2/TeleportingZoid.gif",
+    pico: "/images/Swarm2/TeleportingZoid.gif",
+    tpZoids: "/images/Swarm2/TeleportingZoid.gif",
+    turrets: "/images/Swarm2/AimingTurrets.gif",
+    laserSystem: "/images/placeholder.png",
     gifs: [
       "/images/Gifs/CA_Robots2.gif",
       "/images/Gifs/CA_Robots1.gif",
@@ -82,12 +78,6 @@ export const projectsData = [
     audio: "/images/Chronostrike/LaserAudioTracker.gif",
     spideySense: "/images/Chronostrike/SpideySense.gif",
     otherHighlights: "/images/Chronostrike/OtherHighlights.gif",
-    gifs: [
-      "/images/Gifs/CA_Robots2.gif",
-      "/images/Gifs/CA_Robots1.gif",
-      "/images/Gifs/CA_Puzzle1.gif",
-      "/images/Gifs/CA_Puzzle2.gif",
-    ]
   };
 
   export const visionsOfYesterdayImages = {

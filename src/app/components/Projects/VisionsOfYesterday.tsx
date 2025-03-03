@@ -24,7 +24,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
 
   return (
     <BaseProjectDescription project={project} onBack={onBack}>
-      <div className="min-h-screen text-gray-200 p-6 space-y-16">
+      <div className="min-h-screen text-gray-200 space-y-16">
         {/* Title & Video Section */}
         <section className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-4 text-center">Visions of Yesterday</h1>
@@ -40,12 +40,13 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
           </div>
         </section>
 
+        <div className="max-w-6xl mx-auto flex flex-col gap-y-12 text-gray-300">
         {/* What is it? Section */}
         <section className="max-w-6xl mx-auto border-b border-green-500 pb-8">
           <h2 className="text-2xl font-semibold mb-4">What is it?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div>
-              <p className="md:md:text-lg">
+              <p className="md:text-lg">
                 A story based experience, developed in Unity, where the user will see visual impairments that try to imitate dementia symptoms.
                 Its original use case was to create empathy in professional and at-home carers so they can better understand the daily struggles of someone with dementia.
                 <br />
@@ -179,6 +180,7 @@ export function VisionsOfYesterday({ project, onBack }: VisionsOfYesterdayProps)
             </ul>
           </div>
         </section>
+        </div>
         
         {/* Credits Section */}
         <section className="max-w-6xl mx-auto">
