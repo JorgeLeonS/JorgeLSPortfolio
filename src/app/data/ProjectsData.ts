@@ -64,9 +64,9 @@ export const projectsData = [
   export const swarm2Images = {
     landing: "/images/Swarm2/LandingImage.png",
     logo: "/images/Swarm2/Swarm2Logo.png",
-    audio: "/images/placeholder.png",
-    pico: "/images/placeholder.png",
-    enemies: "/images/placeholder.png",
+    audio: "/images/Swarm2/placeholder.png",
+    pico: "/images/Swarm2/AimingTurrets.mp4",
+    enemies: "/images/Swarm2/AimingTurrets.mp4",
     gifs: [
       "/images/Gifs/CA_Robots2.gif",
       "/images/Gifs/CA_Robots1.gif",

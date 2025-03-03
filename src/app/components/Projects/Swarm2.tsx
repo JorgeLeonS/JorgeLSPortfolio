@@ -129,12 +129,16 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               Wwise profiling and further refined my audio implementation skills.
             </p>
           </div>
+          <video 
+    autoPlay 
+    loop 
+    muted 
+    playsInline 
+    className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg">
+    <source src={swarm2Images.pico} type="video/mp4" />
+    <source src={swarm2Images.pico.replace('.mp4', '.webm')} type="video/webm" />
+  </video>
           {/* Image second by default on mobile, first on desktop */}
-          <img
-            src={swarm2Images.audio /* or otherProjectImages.someAudioImage */}
-            alt="Audio Programming"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
 
         {/* Pico Headset Functionality */}
@@ -172,12 +176,16 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
                 key={index}
                 className="px-2 cursor-pointer">
                   <div className="relative aspect-[6/5] mb-4">
-                  <Image
-                    src={slide.image}
-                    alt={`Slide ${index + 1}`}
-                    fill
-                    className="object-contain rounded-lg"
-                  />
+                  <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="object-contain rounded-lg w-full h-full">
+              <source src={slide.image} type="video/mp4" />
+              <source src={slide.image.replace('.mp4', '.webm')} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
                   </div>
                 </div>
               ))}
