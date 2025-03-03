@@ -62,13 +62,7 @@ export const projectsData = [
     pico: "/images/Swarm2/TeleportingZoid.gif",
     tpZoids: "/images/Swarm2/TeleportingZoid.gif",
     turrets: "/images/Swarm2/AimingTurrets.gif",
-    laserSystem: "/images/placeholder.png",
-    gifs: [
-      "/images/Gifs/CA_Robots2.gif",
-      "/images/Gifs/CA_Robots1.gif",
-      "/images/Gifs/CA_Puzzle1.gif",
-      "/images/Gifs/CA_Puzzle2.gif",
-    ]
+    laserSystem: "/images/Swarm2/LaserCorridor.gif",
   };
 
   export const chronostrikeImages = {
