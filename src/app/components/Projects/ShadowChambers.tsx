@@ -55,7 +55,7 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
           <div className="flex justify-center pb-8">
             <iframe
               className="w-full sm:max-w-6xl md:max-w-6xl aspect-video rounded-lg shadow-lg"
-              src="https://scontent.oculuscdn.com/v/t64.7195-25/473391890_4158925231005741_7697656160575343636_n.mp4?autoplay=0&_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=b20b63&amp;_nc_ohc=BQgqnhvqBzgQ7kNvgFua_QD&amp;_nc_oc=AdhWfgyZmG1twxxYGggnGEH0noPTBVObzKCidUb3o8m_C6dNLvoFHvUdkvEa0fUtotM&amp;_nc_zt=28&amp;_nc_ht=scontent.oculuscdn.com&amp;_nc_gid=AOLaDHH4widGdk7xpJ1Exsu&amp;oh=00_AYA0yD-t8iLTFYCME57CJeCWbF_l1tzH6L4Z4IaY2YwYVg&amp;oe=67C68842"
+              src="https://scontent.oculuscdn.com/v/t64.7195-25/473391890_4158925231005741_7697656160575343636_n.mp4?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=b20b63&amp;_nc_ohc=ubHM1EZSi6oQ7kNvgH8nDvL&amp;_nc_oc=AdiVp3XeigzNQjeKtpDr0RxrfuZ-tgoxtBDn4Asvds-6gbDawpzd3MB82nyo4WYjx-8&amp;_nc_zt=28&amp;_nc_ht=scontent.oculuscdn.com&amp;_nc_gid=AazT85SyGU6k-cmSldjFpvh&amp;oh=00_AYAkkmaEeTPXqYc6fQEyTtnIM9rJa2D6HAB_6iCvSN7J_Q&amp;oe=67CC7702"
               title="Shadow Chambers Demo Video"
               frameBorder="0"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
