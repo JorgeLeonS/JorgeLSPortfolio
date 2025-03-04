@@ -53,7 +53,12 @@ export const projectsData = [
     spatialPuzzle: "/images/ShadowChambers/SpatialPuzzle.gif",
     VRIK: "/images/ShadowChambers/VRIK.gif",
     UI: "/images/ShadowChambers/UI.gif",
-    screenshot3: "/images/placeholder.png",
+    aiTools: "/images/ShadowChambers/AITools.png",
+
+    spatialPuzzleEditor: "/images/ShadowChambers/SpatialPuzzleEditor.png",
+    paintingPuzzleEditor: "/images/ShadowChambers/PaintingPuzzleEditor.png",
+    imageCreatorEditor: "/images/ShadowChambers/ImageCreatorEditor.png",
+    debugMenuEditor: "/images/ShadowChambers/DebugMenuEditor.png",
   };
 
   export const swarm2Images = {

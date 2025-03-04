@@ -63,13 +63,15 @@ class SmallCarousel extends React.Component<SmallCarouselProps, SmallCarouselSta
         <Slider {...sliderSettings}>
           {this.props.slides.map((slide, index) => (
             <div key={index} className="px-2 cursor-pointer">
-              <div className="relative aspect-[6/5] mb-4">
+            <div className="bg-tag-green text-green-100 rounded-lg items-center shadow-lg overflow-hidden">
+              <div className="relative aspect-[6/5] m-3">
                 <Image
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
                   fill
-                  className="object-contain rounded-lg"
+                  className="object-contain object-center rounded-lg"
                 />
+              </div>
               </div>
             </div>
           ))}

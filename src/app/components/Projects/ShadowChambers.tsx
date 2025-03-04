@@ -12,10 +12,10 @@ export interface ShadowChambersProps {
 
 export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentMechanicSlide, setCurrentMechanicSlide] = useState(0);
 
     // Carousel data: image and corresponding description
-    const carouselData = [
+    const mechanicsCarouselData = [
       {
         image: shadowChambersImages.spatialPuzzle,
         description: "A fully procedural spatial puzzle that is based in one of the Half-Life: Alyx puzzles, the goal is to find the proper alignment for all the points. However there are many customizeable settings that allowed us to define a proper difficulty progression."
@@ -27,6 +27,27 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
       {
         image: shadowChambersImages.UI,
         description: "UI isn’t my favorite aspect of development, but I implemented functionality for displaying server-stored games, creating new games, and managing settings. This involved optimizing loading times, handling error messages, ensuring a smooth user flow, and managing cancellations when switching menus or starting games."
+      }
+    ];
+
+    const [currentEditorSlide, setCurrentEditorSlide] = useState(0);
+
+    const editorCarouselData = [
+      {
+        image: shadowChambersImages.spatialPuzzleEditor,
+        description: "An in-game editor for the spatial puzzle where we can modify the number of origins, points to connect to, distances between them and other settings."
+      },
+      {
+        image: shadowChambersImages.paintingPuzzleEditor,
+        description: "Like the spatial puzzle, I created additional in-game puzzle editors to facilitate testing mechanics. This one is used for the painting puzzle."
+      },
+      {
+        image: shadowChambersImages.debugMenuEditor,
+        description: "A debug menu accessible throughout the game, connecting to our server for easy testing of specific games. It includes a section for navigating to specific chambers, and in play mode, the chamber list dynamically updates to display the steps required to complete each chamber, allowing for seamless skipping of individual steps."
+      },
+      {
+        image: shadowChambersImages.imageCreatorEditor,
+        description: "Developed an editor tool that connects to Flux Dev or Flux Pro to generate image combinations based on predefined game items. The prompt is fine-tuned to meet our requirements but remains fully editable."
       }
     ];
 
@@ -84,9 +105,6 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
           </div>
         </section>
 
-        {/* Contributions Section with Bulletpoints */}
-        <section className="border-b border-green-500 pb-8 space-y-6">
-
           {/* AI Work */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <div className="order-1 md:order-2">
@@ -98,7 +116,7 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
             <div className="order-2 md:order-1">
               <div className="w-full aspect-video overflow-hidden rounded-lg shadow-md">
                 <img
-                  src={shadowChambersImages.screenshot3}
+                  src={shadowChambersImages.aiTools}
                   alt="AI Work"
                   className="object-cover w-full h-full"
                 />
@@ -106,29 +124,6 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
             </div>
           </div>
 
-                    {/* Editor Tools */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div className="order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-4">Editor Tools</h2>
-
-              <p className="md:text-lg">
-                I created several tools to streamline game testing, including features for puzzle testing, level skipping, server game management, and an image creation utility.
-              </p>
-            </div>
-            <div className="order-2 md:order-1">
-              <div className="w-full aspect-video overflow-hidden rounded-lg shadow-md">
-                <img
-                  src={shadowChambersImages.screenshot3}
-                  alt="Editor Tools"
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-
-          </section>
-
-          
           {/* Game Mechanics */}
           <div className="md:items-center gap-6">
             <h2 className="text-2xl font-bold mb-4">Game Mechanics</h2>
@@ -143,16 +138,42 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
         <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
       <div className="md:w-1/2 order-1 md:order-2">
         <p className="md:text-lg">
-          {carouselData[currentSlide].description}
+          {mechanicsCarouselData[currentMechanicSlide].description}
         </p>
       </div>
       <div className="md:w-1/2 order-2 md:order-1">
         <SmallCarousel
-          slides={carouselData}
-          onSlideChange={(index) => setCurrentSlide(index)}
+          slides={mechanicsCarouselData}
+          onSlideChange={(index) => setCurrentMechanicSlide(index)}
         />
       </div>
     </div>
+
+    
+          {/* Editor Tools */}
+          <div className="md:items-center gap-6">
+            <h2 className="text-2xl font-bold mb-4">Editor Tools</h2>
+              <p className="md:text-lg">
+              I created several tools to streamline game testing, including features for puzzle testing, level skipping, server game management, and an image creation utility.
+              <br></br>
+                  Check some of them below:
+              </p>
+          </div>
+
+                    {/* Other Highlights Section with Carousel */}
+                <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
+              <div className="md:w-1/2 order-1 md:order-2">
+                <p className="md:text-lg">
+                  {editorCarouselData[currentEditorSlide].description}
+                </p>
+              </div>
+              <div className="md:w-1/2 order-2 md:order-1">
+                <SmallCarousel
+                  slides={editorCarouselData}
+                  onSlideChange={(index) => setCurrentEditorSlide(index)}
+                />
+              </div>
+            </div>
           
 
       </div>
