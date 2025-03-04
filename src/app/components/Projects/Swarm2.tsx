@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import SmallCarousel from '../SmallCarousel';
 import { otherProjectImages, swarm2Images, Project } from '../../data/ProjectsData';
 import { BaseProjectDescription } from '../BaseProjectDescription';
 import { FaSteam, FaMeta, FaUnity } from "react-icons/fa6";
@@ -24,16 +25,20 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
   // Carousel data: image and corresponding description
   const carouselData = [
     {
-      image: swarm2Images.turrets, // You can swap this out with the appropriate image
+      image: swarm2Images.turrets,
       description: "Employed mathematical concepts to implement various enemy behaviors, such as turrets that track the player’s position while rotating along two different axes (base and barrel)."
     },
     {
-      image: swarm2Images.tpZoids, // Replace with your actual image reference
+      image: swarm2Images.tpZoids,
       description: "Developed a teleporting enemy that, upon being hit, relocates to a newly calculated position at a safe distance from the player and within level boundaries."
     },
     {
-      image: swarm2Images.laserSystem, // Another image reference
-      description: "Created a customizable laser system with variable movement and gameplay settings, prominently featured in the final level of the rogue-like mode."
+      image: swarm2Images.laserSystem,
+      description: "Created a customizable laser system with variable movement and gameplay settings, this feature was used in in the final level of the rogue-like mode... Only as static lasers in different positions, but hey, the funcionality was there."
+    },
+    {
+      image: swarm2Images.bossesTurrets,
+      description: "Implemented the featured bosses' shoulder turrets, each with custom states acting independently from the main boss. Two bosses required inverse kinematics, while the last one featured lasers with player position prediction."
     }
   ];
 
@@ -115,9 +120,8 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
 
 
         {/* Audio Programming */}
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
+        <div className="md:items-center gap-6">
           {/* Text first by default on mobile, second on desktop */}
-          <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Audio Programming</h2>
             <p className="md:text-lg">
               I collaborated with various audio designers, ranging from small studios to independent artists, 
@@ -128,13 +132,6 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
               I rapidly learned how to set up sounds in Wwise and route them to Unity, which introduced me to 
               Wwise profiling and further refined my audio implementation skills.
             </p>
-          </div>
-          {/* Image second by default on mobile, first on desktop */}
-          <img
-            src={swarm2Images.audio /* or otherProjectImages.someAudioImage */}
-            alt="Audio Programming"
-            className="md:w-1/2 order-2 md:order-1 object-cover rounded-lg"
-          />
         </div>
 
         {/* Pico Headset Functionality */}
@@ -157,33 +154,19 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
 
         {/* Other Highlights Section with Carousel */}
         <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
-          {/* Description Panel */}
-          <div className="md:w-1/2 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
-            <p className="md:text-lg">
-              {carouselData[currentSlide].description}
-            </p>
-          </div>
-          {/* Carousel Panel */}
-          <div className="md:w-1/2 order-2 md:order-1">
-            <Slider {...sliderSettings}>
-              {carouselData.map((slide, index) => (
-                <div 
-                key={index}
-                className="px-2 cursor-pointer">
-                  <div className="relative aspect-[6/5] mb-4">
-                  <Image
-                    src={slide.image}
-                    alt={'Slide ${index + 1}'}
-                    fill
-                    className="object-contain rounded-lg"
-                  />
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </div>
+      <div className="md:w-1/2 order-1 md:order-2">
+        <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
+        <p className="md:text-lg">
+          {carouselData[currentSlide].description}
+        </p>
+      </div>
+      <div className="md:w-1/2 order-2 md:order-1">
+        <SmallCarousel
+          slides={carouselData}
+          onSlideChange={(index) => setCurrentSlide(index)}
+        />
+      </div>
+    </div>
 
 
       </div>

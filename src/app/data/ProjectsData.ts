@@ -50,8 +50,9 @@ export const projectsData = [
   export const shadowChambersImages = {
     landing: "/images/ShadowChambers/LandingImage.png",
     logo: "/images/ShadowChambers/ShadowChambersLogoWhite.png",
-    screenshot1: "/images/placeholder.png",
-    screenshot2: "/images/placeholder.png",
+    spatialPuzzle: "/images/ShadowChambers/SpatialPuzzle.gif",
+    VRIK: "/images/ShadowChambers/VRIK.gif",
+    UI: "/images/ShadowChambers/UI.gif",
     screenshot3: "/images/placeholder.png",
   };
 
@@ -59,10 +60,11 @@ export const projectsData = [
     landing: "/images/Swarm2/LandingImage.png",
     logo: "/images/Swarm2/Swarm2Logo.png",
     audio: "/images/Swarm2/TeleportingZoid.gif",
-    pico: "/images/Swarm2/TeleportingZoid.gif",
+    pico: "/images/Quest3AndPico.jpg",
     tpZoids: "/images/Swarm2/TeleportingZoid.gif",
     turrets: "/images/Swarm2/AimingTurrets.gif",
     laserSystem: "/images/Swarm2/LaserCorridor.gif",
+    bossesTurrets: "/images/placeholder.png",
   };
 
   export const chronostrikeImages = {
