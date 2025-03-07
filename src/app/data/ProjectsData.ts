@@ -45,6 +45,8 @@ export const projectsData = [
     },
   ];
 
+  export const resume = 'CV.pdf';
+
   export const backgroundImage = '/images/intro.svg';
 
   export const shadowChambersImages = {

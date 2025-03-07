@@ -2,12 +2,14 @@
 import Link from 'next/link';
 import { FaDiscord, FaLinkedin, FaGithub, FaCode, FaBrush, FaPeopleGroup, FaGlasses } from "react-icons/fa6";
 import { RiOpenaiFill } from "react-icons/ri";
+import { resume } from '../data/ProjectsData';
+
 
 export default function AboutMe() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">About Me</h1>
-      
+      <h1 className="text-4xl font-bold mb-4">About Me</h1>
+
       {/* Introduction */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Who I Am</h2>
@@ -38,73 +40,71 @@ export default function AboutMe() {
       {/* Skills & Approach */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">My Approach & Teamwork</h2>
-        <ul className="list-inside mt-4 space-y-2 text-lg">
-          <li>
-            <div className="flex p-2">
-            <FaCode  className="w-6 h-6"/>
-            <strong className="px-4">I know how to code:</strong>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-4">
+          <div className="border p-4">
+            <div className="flex items-center mb-2">
+              <FaCode className="w-6 h-6" />
+              <strong className="px-4">I know how to code:</strong>
             </div>
-             Primarily in Unity (C#), but I’m 
-            also comfortable with Unreal Blueprints and eager to dive deeper into C++. 
-            Web technologies? Been there, done that!
-          </li>
-          <li>
-          <div className="flex p-2">
-            <FaBrush  className="w-6 h-6"/>
-            <strong className="px-4">I appreciate great design:</strong>
+            <p className="text-lg">
+              Primarily in Unity (C#), but I’m also comfortable with Unreal Blueprints and eager to dive deeper into C++. Web technologies? Been there, done that!
+            </p>
           </div>
-            Collaborating with designers 
-            and artists taught me how much work goes into creating visually compelling 
-            environments and interfaces—and I love every bit of it.
-          </li>
-          <li>
-          <div className="flex p-2">
-            <FaPeopleGroup  className="w-6 h-6"/>
-            <strong className="px-4">I thrive in teams:</strong>
+          <div className="border p-4">
+            <div className="flex items-center mb-2">
+              <FaBrush className="w-6 h-6" />
+              <strong className="px-4">I appreciate great design:</strong>
+            </div>
+            <p className="text-lg">
+              Collaborating with designers and artists taught me how much work goes into creating visually compelling environments and interfaces—and I love every bit of it.
+            </p>
           </div>
-            For me, truly great work emerges 
-            when everyone understands and supports each other, and I find real joy 
-            in bringing people together. I’ve also guided and managed teams 
-            on multiple occasions, helping us push projects across the finish line.
-          </li>
-          <li>
-          <div className="flex p-2">
-            <FaGlasses  className="w-6 h-6"/>
-            <strong className="px-4">I’m always improving:</strong> 
+          <div className="border p-4">
+            <div className="flex items-center mb-2">
+              <FaPeopleGroup className="w-6 h-6" />
+              <strong className="px-4">I thrive in teams:</strong>
+            </div>
+            <p className="text-lg">
+              For me, truly great work emerges when everyone understands and supports each other, and I find real joy in bringing people together. I’ve also guided and managed teams on multiple occasions, helping us push projects across the finish line.
+            </p>
           </div>
-            Whether it’s hunting for a more 
-            efficient solution or refactoring existing code, I constantly push myself 
-            to do better (sometimes at the cost of redoing something that already 
-            works...)
-          </li>
-        </ul>
+          <div className="border p-4">
+            <div className="flex items-center mb-2">
+              <FaGlasses className="w-6 h-6" />
+              <strong className="px-4">I’m always improving:</strong>
+            </div>
+            <p className="text-lg">
+              Whether it’s hunting for a more efficient solution or refactoring existing code, I constantly push myself to do better (sometimes at the cost of redoing something that already works...)
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* AI Superpower */}
-<section className="mb-8">
-  <div className="flex">
-  <RiOpenaiFill className="w-6 h-6 scale-150"/>
-  <h2 className="text-2xl font-semibold mb-2 px-4">AI: My Superpower</h2>
-  </div>
-  <p className="text-lg leading-relaxed">
-    Lately, I’ve also been harnessing <strong>AI</strong> tools to speed up 
-    development and spark fresh ideas. It often feels like a superpower that 
-    can supercharge productivity, but as Uncle Ben famously said, 
-    “with great power comes great responsibility.” I keep ethics, fairness, 
-    and user well-being in mind whenever I integrate AI into my projects, 
-    ensuring that technology enhances experiences in meaningful ways.
-  </p>
-  <p className="text-lg leading-relaxed mt-4">
-    Check out{' '}
-    <Link 
-      href="/?section=projects&project=shadow-chambers"
-      className="text-blue-500 underline"
-    >
-      Shadow Chambers
-    </Link>{' '}
-    if you want to know more about how I’ve used AI in my projects.
-  </p>
-</section>
+      <section className="mb-8">
+        <div className="flex">
+          <RiOpenaiFill className="w-6 h-6 scale-150" />
+          <h2 className="text-2xl font-semibold mb-2 px-4">AI: My Superpower</h2>
+        </div>
+        <p className="text-lg leading-relaxed">
+          Lately, I’ve also been harnessing <strong>AI</strong> tools to speed up 
+          development and spark fresh ideas. It often feels like a superpower that 
+          can supercharge productivity, but as Uncle Ben famously said, 
+          “with great power comes great responsibility.” I keep ethics, fairness, 
+          and user well-being in mind whenever I integrate AI into my projects, 
+          ensuring that technology enhances experiences in meaningful ways.
+        </p>
+        <p className="text-lg leading-relaxed mt-4">
+          Check out{' '}
+          <Link 
+            href="/?section=projects&project=shadow-chambers"
+            className="text-blue-500 underline"
+          >
+            Shadow Chambers
+          </Link>{' '}
+          if you want to know more about how I’ve used AI in my projects.
+        </p>
+      </section>
 
       {/* Personal Interests */}
       <section className="mb-8">
@@ -140,32 +140,58 @@ export default function AboutMe() {
           and let’s see what we can create together!
         </p>
 
+        <div className="text-center text-white flex flex-col items-center justify-center m-4">
+
+        {/* Centered Button */}
+        <Link
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            inline-block 
+            bg-transparent 
+            border border-white 
+            text-white 
+            px-6 py-3 
+            uppercase 
+            tracking-wider 
+            rounded 
+            hover:bg-white 
+            hover:text-green-900 
+            transition-colors 
+            duration-300
+          "
+        >
+          Check out my CV
+        </Link>
+        </div>
+
         <div className="max-w-6xl mx-auto flex flex-row items-center justify-center pb-8 pt-8 space-x-4">
-                  <a
-                    href="https://www.linkedin.com/in/jorge-leon-salas/"
-                    className="text-gray-400 size-11"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaLinkedin className="w-6 h-6 hover:text-green-700 scale-150" />
-                  </a>
-                  <a
-                    href="https://discordapp.com/users/jorgels3312"
-                    className="text-gray-400 size-11"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaDiscord className="w-6 h-6 hover:text-green-700 scale-150" />
-                  </a>
-                  <a
-                    href="https://github.com/JorgeLeonS"
-                    className="text-gray-400 size-11"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub className="w-6 h-6 hover:text-green-700 scale-150" />
-                  </a>
-                </div>
+          <a
+            href="https://www.linkedin.com/in/jorge-leon-salas/"
+            className="text-gray-400 size-11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="w-6 h-6 hover:text-green-700 scale-150" />
+          </a>
+          <a
+            href="https://discordapp.com/users/jorgels3312"
+            className="text-gray-400 size-11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaDiscord className="w-6 h-6 hover:text-green-700 scale-150" />
+          </a>
+          <a
+            href="https://github.com/JorgeLeonS"
+            className="text-gray-400 size-11"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="w-6 h-6 hover:text-green-700 scale-150" />
+          </a>
+        </div>
       </section>
     </div>
   );
