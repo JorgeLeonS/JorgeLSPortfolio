@@ -72,7 +72,7 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
   };
 
   return (
-    <div className="relative lg:w-4/5 sm:w-full mx-auto py-8">
+    <div className="relative lg:w-4/5 sm:w-full mx-auto py-12">
       <Slider {...settings}>
         {projectsData.map((project) => (
           <div
@@ -81,19 +81,26 @@ export default function ProjectsCarousel({ setActiveProject }: ProjectsCarouselP
             onMouseUp={(e) => handleMouseUp(e, project)}
             onTouchStart={handleTouchStart}
             onTouchEnd={(e) => handleTouchEnd(e, project)}
-            className="px-2 cursor-pointer"
+            className="px-4 cursor-pointer"
           >
-            <div className="bg-tag-green text-green-100 rounded-lg shadow-lg overflow-hidden p-4">
-            <div className="relative aspect-[6/5] md:aspect-video rounded-md mb-4">
-  <Image
-    src={project.image}
-    alt={project.title}
-    fill
-    className="object-contain h-full"
-  />
-</div>
-              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="text-green-300">{project.description}</p>
+            <div className="transform transition-all duration-300 hover:scale-105 origin-center bg-green-800/40 backdrop-blur-sm text-green-100 rounded-xl shadow-xl overflow-hidden p-6 border border-green-700/30 hover:border-green-500/50 h-full flex flex-col">
+              <div className="relative w-full aspect-[16/9] rounded-lg mb-4 overflow-hidden shadow-lg bg-green-900/20">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="flex flex-col flex-grow">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-green-200 line-clamp-1">{project.title}</h3>
+                <p className="text-green-300 text-base md:text-lg leading-relaxed line-clamp-3 mb-4">{project.description}</p>
+                <div className="mt-auto pt-4 border-t border-green-700/30">
+                  <p className="text-green-400 text-sm md:text-base">
+                    Position: <span className="font-medium">{project.role || 'Lead Developer'}</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         ))}

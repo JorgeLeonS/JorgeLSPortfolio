@@ -59,13 +59,14 @@ function HomeContent({ slug }: { slug: string }) {
 
   return (
     <div
-      className="bg-darkest-green text-green-200 min-h-screen"
+      className="min-h-screen bg-gradient-to-b from-darkest-green via-green-900/20 to-darkest-green text-green-200 relative overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat',
         backgroundAttachment: 'fixed',
       }}
     >
+      <div className="absolute inset-0 bg-gradient-to-b from-green-900/10 to-transparent pointer-events-none" />
       <Head>
         <title>Jorge LS Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,15 +77,16 @@ function HomeContent({ slug }: { slug: string }) {
         setActiveSection={handleSectionChange}
       />
 
-      <main className="mx-auto px-8">
+      <main className="mx-auto px-8 relative z-10">
         <AnimatePresence mode="wait">
           {activeSection === 'projects' && !activeProject && (
             <motion.section
               key="projectsCarousel"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
+              className="py-12"
             >
               <ProjectsCarousel setActiveProject={handleProjectSelect} />
             </motion.section>
