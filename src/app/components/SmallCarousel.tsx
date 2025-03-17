@@ -83,7 +83,7 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
 
         {/* Description Panel - Only show if showDescriptions is true */}
         {showDescriptions && (
-          <div className="w-full md:w-[50%] bg-green-800/40 backdrop-blur-sm rounded-lg p-6 border border-green-700/30">
+          <div className="w-full md:w-[50%] bg-green-900/80 md:bg-green-800/40 backdrop-blur-sm rounded-lg p-6 border border-green-700/30">
             <div className="h-full">
               <div className="prose prose-invert max-w-none">
                 <p className="text-green-200 text-base md:text-lg leading-relaxed whitespace-pre-wrap">
