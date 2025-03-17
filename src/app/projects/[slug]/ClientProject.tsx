@@ -73,14 +73,15 @@ function HomeContent({ slug }: { slug: string }) {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-b from-darkest-green via-green-900/20 to-darkest-green text-green-200 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-darkest-green via-green-950/80 to-darkest-green text-green-200 relative overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat',
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-green-900/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-green-950/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-darkest-green/50 md:bg-transparent pointer-events-none" />
       <Head>
         <title>Jorge LS Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
