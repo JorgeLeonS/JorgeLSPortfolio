@@ -8,6 +8,7 @@ import ProjectsCarousel from '../../components/ProjectsCarousel';
 import AboutMe from '../../components/AboutMe';
 import ProjectDescription from '../../components/ProjectDescription';
 import { Project, projectsData, backgroundImage } from '../../data/ProjectsData';
+import TutorialOverlay from '../../components/TutorialOverlay';
 
 // Extract the logic that uses useSearchParams into its own component.
 function HomeContent({ slug }: { slug: string }) {
@@ -16,6 +17,7 @@ function HomeContent({ slug }: { slug: string }) {
 
   const [activeSection, setActiveSection] = useState<'projects' | 'about'>('projects');
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   // Sync component state with URL query parameters
   useEffect(() => {
@@ -32,7 +34,14 @@ function HomeContent({ slug }: { slug: string }) {
     // If there is a project slug in the URL and we're in projects section, set the active project
     if (section === 'projects' && projectSlug) {
       const foundProject = projectsData.find((p) => p.slug === projectSlug);
-      setActiveProject(foundProject || null);
+      if (foundProject) {
+        setActiveProject(foundProject);
+        // Set the current slide index to match the project
+        const projectIndex = projectsData.findIndex((p) => p.slug === projectSlug);
+        if (projectIndex !== -1) {
+          setCurrentSlideIndex(projectIndex);
+        }
+      }
     } else {
       setActiveProject(null);
     }
@@ -48,6 +57,11 @@ function HomeContent({ slug }: { slug: string }) {
   // Update the URL and state when a project is selected
   const handleProjectSelect = (project: Project) => {
     setActiveProject(project);
+    // Update the current slide index when a project is selected
+    const projectIndex = projectsData.findIndex((p) => p.slug === project.slug);
+    if (projectIndex !== -1) {
+      setCurrentSlideIndex(projectIndex);
+    }
     router.push(`/?section=projects&project=${project.slug}`);
   };
 
@@ -72,12 +86,14 @@ function HomeContent({ slug }: { slug: string }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      <TutorialOverlay />
+
       <ResponsiveNavBar
         activeSection={activeSection}
         setActiveSection={handleSectionChange}
       />
 
-      <main className="mx-auto px-8 relative z-10">
+      <main className="mx-auto px-8 relative z-10 py-8">
         <AnimatePresence mode="wait">
           {activeSection === 'projects' && !activeProject && (
             <motion.section
@@ -86,9 +102,11 @@ function HomeContent({ slug }: { slug: string }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="py-12"
             >
-              <ProjectsCarousel setActiveProject={handleProjectSelect} />
+              <ProjectsCarousel 
+                setActiveProject={handleProjectSelect} 
+                currentSlide={currentSlideIndex}
+              />
             </motion.section>
           )}
 

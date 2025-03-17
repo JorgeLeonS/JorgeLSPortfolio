@@ -26,7 +26,7 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
       },
       {
         image: shadowChambersImages.UI,
-        description: "UI isn’t my favorite aspect of development, but I implemented functionality for displaying server-stored games, creating new games, and managing settings. This involved optimizing loading times, handling error messages, ensuring a smooth user flow, and managing cancellations when switching menus or starting games."
+        description: "UI isn't my favorite aspect of development, but I implemented functionality for displaying server-stored games, creating new games, and managing settings. This involved optimizing loading times, handling error messages, ensuring a smooth user flow, and managing cancellations when switching menus or starting games."
       }
     ];
 
@@ -135,21 +135,14 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
           </div>
 
           {/* Other Highlights Section with Carousel */}
-        <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
-      <div className="md:w-1/2 order-1 md:order-2">
-        <p className="md:text-lg">
-          {mechanicsCarouselData[currentMechanicSlide].description}
-        </p>
-      </div>
-      <div className="md:w-1/2 order-2 md:order-1">
-        <SmallCarousel
-          slides={mechanicsCarouselData}
-          onSlideChange={(index) => setCurrentMechanicSlide(index)}
-        />
-      </div>
-    </div>
+        <div className="flex flex-col md:flex-row gap-4">
+          <SmallCarousel 
+            slides={mechanicsCarouselData} 
+            onSlideChange={(index) => setCurrentMechanicSlide(index)}
+            showDescriptions={true}
+          />
+        </div>
 
-    
           {/* Editor Tools */}
           <div className="md:items-center gap-6">
             <h2 className="text-2xl font-bold mb-4">Editor Tools</h2>
@@ -161,19 +154,13 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
           </div>
 
                     {/* Other Highlights Section with Carousel */}
-                <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
-              <div className="md:w-1/2 order-1 md:order-2">
-                <p className="md:text-lg">
-                  {editorCarouselData[currentEditorSlide].description}
-                </p>
-              </div>
-              <div className="md:w-1/2 order-2 md:order-1">
-                <SmallCarousel
-                  slides={editorCarouselData}
-                  onSlideChange={(index) => setCurrentEditorSlide(index)}
-                />
-              </div>
-            </div>
+                <div className="flex flex-col md:flex-row gap-4">
+                  <SmallCarousel 
+                    slides={editorCarouselData} 
+                    onSlideChange={(index) => setCurrentEditorSlide(index)}
+                    showDescriptions={true}
+                  />
+                </div>
           
 
       </div>

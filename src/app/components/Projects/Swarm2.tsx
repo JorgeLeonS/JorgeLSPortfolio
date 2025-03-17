@@ -26,7 +26,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
   const carouselData = [
     {
       image: swarm2Images.turrets,
-      description: "Employed mathematical concepts to implement various enemy behaviors, such as turrets that track the player’s position while rotating along two different axes (base and barrel)."
+      description: "Employed mathematical concepts to implement various enemy behaviors, such as turrets that track the player's position while rotating along two different axes (base and barrel)."
     },
     {
       image: swarm2Images.tpZoids,
@@ -51,6 +51,10 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     afterChange: (index: number) => setCurrentSlide(index),
+  };
+
+  const handleSlideChange = (index: number) => {
+    setCurrentSlide(index);
   };
 
   return (
@@ -139,7 +143,7 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
           <div className="md:w-1/2 order-1 md:order-2">
             <h2 className="text-2xl font-bold mb-4">Pico Headset Functionality</h2>
             <p className="md:text-lg">
-              Although I didn’t implement the initial support for multiple VR headsets, I became well-versed 
+              Although I didn't implement the initial support for multiple VR headsets, I became well-versed 
               in the Meta Quest and Pico SDKs, their update changelogs, and the relevant APIs. This knowledge 
               ensured our desired game features were correctly implemented and helped me address graphics 
               and frame rate issues stemming from supporting both headsets.
@@ -153,21 +157,13 @@ export function Swarm2({ project, onBack }: Swarm2Props) {
         </div>
 
         {/* Other Highlights Section with Carousel */}
-        <div className="flex flex-col md:flex-row md:items-center gap-10 pb-20">
-      <div className="md:w-1/2 order-1 md:order-2">
-        <h2 className="text-2xl font-bold mb-4">Other Highlights</h2>
-        <p className="md:text-lg">
-          {carouselData[currentSlide].description}
-        </p>
-      </div>
-      <div className="md:w-1/2 order-2 md:order-1">
-        <SmallCarousel
-          slides={carouselData}
-          onSlideChange={(index) => setCurrentSlide(index)}
-        />
-      </div>
-    </div>
-
+        <div className="flex flex-col md:flex-row gap-4">
+          <SmallCarousel 
+            slides={carouselData} 
+            onSlideChange={handleSlideChange}
+            showDescriptions={true}
+          />
+        </div>
 
       </div>
     </BaseProjectDescription>
