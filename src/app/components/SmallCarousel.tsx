@@ -27,8 +27,11 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef<any>(null);
 
+  const handleBeforeChange = (current: number, next: number) => {
+    setCurrentSlide(next);
+  };
+
   const handleAfterChange = (index: number) => {
-    setCurrentSlide(index);
     if (onSlideChange) {
       onSlideChange(index);
     }
@@ -43,6 +46,7 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange: handleBeforeChange,
     afterChange: handleAfterChange,
     responsive: [
       { breakpoint: 1024, settings: { centerPadding: '60px' } },
@@ -87,7 +91,7 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
             <div className="h-full">
               <div className="prose prose-invert max-w-none">
                 <p className="text-green-200 text-base md:text-lg leading-relaxed whitespace-pre-wrap">
-                  {slides[currentSlide].description}
+                  {slides[currentSlide]?.description}
                 </p>
               </div>
             </div>
