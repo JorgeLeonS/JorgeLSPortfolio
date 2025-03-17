@@ -58,9 +58,9 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
 
   return (
     <div className="relative w-full max-w-[98%] mx-auto">
-      <div className="flex flex-col md:flex-row gap-16">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16">
         {/* Image Carousel */}
-        <div className="w-full md:w-[50%] mb-14 md:mb-0">
+        <div className="w-full md:w-[50%] mb-8 md:mb-0">
           <div className="relative">
             <Slider {...sliderSettings}>
               {slides.map((slide, index) => (
@@ -83,7 +83,7 @@ export default function SmallCarousel({ slides, onSlideChange, settings, showDes
 
         {/* Description Panel - Only show if showDescriptions is true */}
         {showDescriptions && (
-          <div className="w-full md:w-[50%] bg-green-800/40 backdrop-blur-sm rounded-lg p-6 border border-green-700/30 min-h-[300px] md:min-h-[400px]">
+          <div className="w-full md:w-[50%] bg-green-800/40 backdrop-blur-sm rounded-lg p-6 border border-green-700/30">
             <div className="h-full">
               <div className="prose prose-invert max-w-none">
                 <p className="text-green-200 text-base md:text-lg leading-relaxed whitespace-pre-wrap">

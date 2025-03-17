@@ -94,8 +94,8 @@ export default function ProjectsCarousel({ setActiveProject, currentSlide = 0 }:
             onTouchEnd={(e) => handleTouchEnd(e, project)}
             className="px-2 cursor-pointer"
           >
-            <div className="transform transition-all duration-300 hover:scale-105 origin-center bg-green-800/40 backdrop-blur-sm text-green-100 rounded-xl shadow-xl overflow-hidden p-4 border border-green-700/30 hover:border-green-500/50">
-              <div className="relative w-full aspect-[16/9] rounded-lg mb-2 overflow-hidden shadow-lg bg-green-900/20">
+            <div className="transform transition-all duration-300 hover:scale-105 origin-center bg-green-800/40 backdrop-blur-sm text-green-100 rounded-xl shadow-xl overflow-hidden p-4 border border-green-700/30 hover:border-green-500/50 md:h-auto h-[420px] flex flex-col">
+              <div className="relative w-full aspect-[16/9] rounded-lg mb-3 overflow-hidden shadow-lg bg-green-900/20">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -103,11 +103,11 @@ export default function ProjectsCarousel({ setActiveProject, currentSlide = 0 }:
                   className="object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-1 text-green-200 line-clamp-1">{project.title}</h3>
-                <p className="text-green-300 text-sm md:text-base leading-relaxed line-clamp-2 mb-2">{project.description}</p>
+              <div className="flex-1 flex flex-col md:flex-none">
+                <h3 className="text-2xl md:text-2xl font-bold mb-2 text-green-200">{project.title}</h3>
+                <p className="text-green-300 text-base md:text-base leading-relaxed line-clamp-2 md:line-clamp-2 line-clamp-3 mb-3 flex-1 md:flex-none">{project.description}</p>
                 <div className="pt-2 border-t border-green-700/30">
-                  <p className="text-green-400 text-xs md:text-sm">
+                  <p className="text-green-400 text-sm md:text-sm">
                     Position: <span className="font-medium">{project.role || 'Lead Developer'}</span>
                   </p>
                 </div>

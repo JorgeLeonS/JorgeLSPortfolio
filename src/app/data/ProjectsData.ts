@@ -34,7 +34,7 @@ export const projectsData = [
       title: 'Visions of Yesterday',
       image: '/images/Dementia/VisionsOfyesterdayLanding.png',
       description: 'First project I lead and delivered to a client.',
-      role: 'Lead Developer'
+      role: 'Lead Developer, Project Manager'
     },
     {
       slug: 'cyber-attack',
