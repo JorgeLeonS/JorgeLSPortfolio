@@ -78,12 +78,13 @@ function HomeContent({ slug }: { slug: string }) {
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: 'repeat',
         backgroundAttachment: 'scroll',
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-green-950/50 to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-darkest-green/90 md:bg-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-darkest-green/80 via-darkest-green/50 to-darkest-green/80 md:hidden pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-green-950/10 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-darkest-green/20 md:bg-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-darkest-green/10 via-transparent to-darkest-green/10 md:hidden pointer-events-none" />
       <Head>
         <title>Jorge LS Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
