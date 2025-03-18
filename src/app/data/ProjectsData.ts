@@ -46,7 +46,7 @@ export const projectsData = [
     {
       slug: 'other-projects',
       title: 'Other Projects',
-      image: '/images/grid.png',
+      image: '/images/Grid.png',
       description: 'Smaller but cool projects that I think still deserve to be here. Mostly student projects.',
       role: 'Moslty student projects'
     },
