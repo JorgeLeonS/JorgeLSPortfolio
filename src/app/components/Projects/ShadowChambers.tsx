@@ -76,7 +76,7 @@ export function ShadowChambers({ project, onBack }: ShadowChambersProps) {
           <div className="flex justify-center pb-8">
             <iframe
               className="w-full sm:max-w-6xl md:max-w-6xl aspect-video rounded-lg shadow-lg"
-              src="https://scontent.oculuscdn.com/v/t64.7195-25/473391890_4158925231005741_7697656160575343636_n.mp4?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=b20b63&amp;_nc_ohc=RLUbtXTOOUIQ7kNvgGAt_pA&amp;_nc_oc=AdiBwKWL9Ti8FYxCLgodG7jKIfRFit2w013yyU6Gd8uPa-w1ZbsKWoMeTo-rT89hsmg&amp;_nc_zt=28&amp;_nc_ht=scontent.oculuscdn.com&amp;_nc_gid=mvYeLG7FeippkMECqrcBgw&amp;oh=00_AYG_a_vBSlGo-mCuc7EqwhSZuv0-ZloNwrsZHkVUKbVHsA&amp;oe=67DE4342"
+              src="https://www.youtube.com/embed/RdhMkIIYSrA?si=xtthlk47l0pJvJbQ"
               title="Shadow Chambers Demo Video"
               frameBorder="0"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
