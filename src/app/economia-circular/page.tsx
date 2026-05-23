@@ -82,6 +82,8 @@ export default function EconomiaCircularPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
+              aria-live="polite"
+              data-mobile-story="true"
               className="mx-auto mt-6 rounded-3xl border border-green-300/25 bg-black/35 p-4 text-left shadow-[0_0_45px_rgba(74,222,128,0.14)] backdrop-blur sm:mt-8 sm:p-5 lg:mx-0"
             >
               <div className="flex items-center justify-between gap-4">
@@ -92,13 +94,14 @@ export default function EconomiaCircularPage() {
                   {activeStep + 1}/5
                 </span>
               </div>
-              <p className="mt-4 text-xl font-semibold text-white sm:text-2xl">{processSteps[activeStep]}</p>
+              <p data-active-step="true" className="mt-4 text-xl font-semibold text-white sm:text-2xl">{processSteps[activeStep]}</p>
               <div className="mt-4 grid grid-cols-5 gap-2" aria-label="Progreso del proceso">
                 {processSteps.map((step, index) => (
                   <button
                     key={step}
                     type="button"
                     aria-label={`Ver etapa ${index + 1}`}
+                    aria-pressed={index === activeStep}
                     onClick={() => setActiveStep(index)}
                     className="h-2 overflow-hidden rounded-full bg-green-100/15"
                   >
@@ -116,11 +119,13 @@ export default function EconomiaCircularPage() {
               <button
                 type="button"
                 onClick={scrollToSummary}
+                data-summary-button="true"
                 className="rounded-full border border-green-300/30 bg-green-300 px-5 py-3 text-sm font-semibold text-[#021006] shadow-[0_0_30px_rgba(74,222,128,0.25)] transition hover:bg-green-200"
               >
                 Ver resumen del proyecto
               </button>
               <motion.span
+                data-scroll-cue="true"
                 className="text-xs uppercase tracking-[0.25em] text-green-200/75"
                 animate={{ y: [0, 6, 0] }}
                 transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
